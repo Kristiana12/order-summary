@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --clr-primary-300: #e0e8ff;
+  --clr-primary-500: #3829e0;
+  --clr-white: #fff;
+  --clr-hover: #766cf1;
+
+  --clr-secondary-300: #f5f7ff;
+  --clr-secondary-400: #7280a7;
+  --clr-secondary-700: #1f2f56;
+
+  --clr-shadow: rgba(56, 41, 224, 0.4);
+  /* Font Size */
+  --font-size-title: 2.2rem;
+  --font-size-text: 1.6rem;
+  --font-size-small-text: 1.4rem;
+
+  /* Margins */
+  --margin-medium: 2.4rem;
+  --margin-small: 1.6rem;
+
+  /* Paddings */
+  --padding-small: 1.6rem;
+}
+
+body,
+html {
+  background-color: var(--clr-primary-300);
+  background-image: url("../images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+  line-height: 1.7;
+  font-size: 62.5%;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.order-summary {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-summary__card {
+  width: 90%;
+  max-width: 42rem;
+  margin: 0 auto;
+  background-color: var(--clr-white);
+  border-radius: 2rem;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0.5rem 4rem var(--clr-shadow);
+}
+
+.order-summary__card--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-summary__card--content {
+  padding: 3.2rem;
+}
+
+.order-summary__card--content--title {
+  color: var(--clr-secondary-700);
+  font-size: var(--font-size-title);
+  font-weight: 900;
+}
+
+.order-summary__card--content--para {
+  color: var(--clr-secondary-400);
+  font-size: var(--font-size-text);
+  margin: var(--margin-small) 0 var(--margin-medium);
+}
+
+.order-summary__card--pricing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-secondary-300);
+  padding: var(--padding-small);
+  border-radius: 1.1rem;
+  font-size: var(--font-size-small-text);
+}
+
+.order-summary__card--pricing-plan {
+  margin-left: -3rem;
+}
+
+.order-summary__card--pricing-plan h3 {
+  color: var(--clr-secondary-700);
+  font-weight: 900;
+}
+
+.order-summary__card--pricing-plan p {
+  color: var(--clr-secondary-400);
+}
+
+.order-summary__card--pricing--link:link,
+.order-summary__card--pricing--link:visited {
+  color: var(--clr-primary-500);
+  transition: color 0.3s ease;
+}
+
+.order-summary__card--pricing--link:hover,
+.order-summary__card--pricing--link:active {
+  color: var(--clr-hover);
+}
+
+.order-summary__card--buttons {
+  margin-top: var(--margin-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-summary__card--buttons .btn-payment,
+.order-summary__card--buttons .btn-cancel {
+  border: none;
+  font-size: var(--font-size-text);
+  font-family: "Red Hat Display", sans-serif;
+  cursor: pointer;
+}
+
+.order-summary__card--buttons .btn-payment {
+  align-self: stretch;
+  margin-bottom: var(--margin-medium);
+  padding: var(--padding-small) 0;
+  color: var(--clr-white);
+  background-color: var(--clr-primary-500);
+  border-radius: 1.1rem;
+  box-shadow: 0 1rem 2rem var(--clr-shadow);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.order-summary__card--buttons .btn-payment:hover,
+.order-summary__card--buttons .btn-payment:active {
+  background-color: var(--clr-hover);
+}
+
+.order-summary__card--buttons .btn-cancel {
+  display: inline-block;
+  background: transparent;
+  color: var(--clr-secondary-400);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.order-summary__card--buttons .btn-cancel:hover,
+.order-summary__card--buttons .btn-cancel:active {
+  color: var(--clr-secondary-700);
+}
+
+@media screen and (min-width: 970px) {
+  body,
+  html {
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+  }
+
+  .order-summary__card--pricing-plan {
+    margin-left: -10rem;
+  }
+}
