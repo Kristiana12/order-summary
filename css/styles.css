@@ -23,8 +23,9 @@
   /* Font Size */
   --font-size-title-desktop: 2.8rem;
   --font-size-title-mobile: 2.4rem;
-  --font-size-text: 1.7rem;
-  --font-size-small-text: 1.5rem;
+  --font-size-text-desktop: 1.7rem;
+  --font-size-text-mobile: 1.5rem;
+  --font-size-small-text: 1.4rem;
 
   /* Margins */
   --margin-medium: 2.6rem;
@@ -78,8 +79,8 @@ html {
 }
 
 .order-summary__card--content {
-  padding: 3.2rem;
-  font-size: var(--font-size-text);
+  padding: 2.8rem;
+  font-size: var(--font-size-text-mobile);
 }
 
 .order-summary__card--content--title {
@@ -91,6 +92,7 @@ html {
 .order-summary__card--content--para {
   color: var(--clr-secondary-400);
   margin: var(--margin-small) 0 var(--margin-medium);
+  padding: 0 calc(0.6rem + 1vw);
 }
 
 .order-summary__card--pricing {
@@ -99,7 +101,7 @@ html {
   justify-content: space-between;
 
   background-color: var(--clr-secondary-300);
-  padding: var(--padding-medium);
+  padding: var(--padding-small);
   border-radius: 1.1rem;
 }
 
@@ -146,7 +148,7 @@ html {
 .order-summary__card--buttons .btn-payment,
 .order-summary__card--buttons .btn-cancel {
   border: none;
-  font-size: var(--font-size-text);
+  font-size: var(--font-size-text-mobile);
   font-family: "Red Hat Display", sans-serif;
   cursor: pointer;
   font-weight: bold;
@@ -191,7 +193,21 @@ html {
     background-position: top;
   }
 
+  .order-summary__card--content {
+    padding: 3.2rem;
+    font-size: var(--font-size-text-desktop);
+  }
+
   .order-summary__card--content--title {
     font-size: var(--font-size-title-desktop);
+  }
+
+  .order-summary__card--pricing {
+    padding: var(--padding-medium);
+  }
+
+  .order-summary__card--buttons .btn-payment,
+  .order-summary__card--buttons .btn-cancel {
+    font-size: var(--font-size-text-desktop);
   }
 }
